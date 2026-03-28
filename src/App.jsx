@@ -81,7 +81,7 @@ const THRESHOLDS = [{domain:"ISA Mining Code adoption",year:2026,confidence:"Low
 const AXIOMS = {type:"impossibility",items:[{id:"A1",name:"Resource Necessity",description:"Critical minerals in polymetallic nodules (Ni, Co, Cu, Mn) serve as inputs to the global energy transition, creating demand pressure that no single actor can eliminate — though LFP and sodium-ion battery chemistry are dissolving this axiom from the demand side."},{id:"A2",name:"Extraction-Disruption Identity",description:"The polymetallic nodule constitutes the primary hard substrate for benthic organisms in the CCZ abyssal plain; extracting the nodule and destroying the benthic habitat are the same physical act and cannot be separated by any extraction technology."},{id:"A3",name:"Abyssal Timescale Asymmetry",description:"Nodule regeneration rates of 1-20 mm/Myr and benthic ecosystem recovery times >10^3 years exceed any market discount rate, planning horizon, or institutional control period by at least three orders of magnitude."}]};
 
 const METHODS_DATA = {
-  welfare_function: "W computed across five channels using Sumaila et al. (2025) comprehensive CBA anchored at geometric mean of $5.60-8.70 non-financial losses per $1.00 financial gain, with β_W = √(5.6 × 8.7) ≈ 6.8.",
+  welfare_function: "W computed across five channels using Sumaila et al. (2025) comprehensive CBA anchored at geometric mean of $5.60-8.70 non-financial losses per $1.00 financial gain, with βW = √(5.6 × 8.7) ≈ 6.8.",
   cooperative_baseline: "No commercial nodule extraction; mineral demand met by LFP/sodium-ion battery chemistry substitution and closed-loop recycling, with $0.5B in legitimate ISA-supervised scientific research value.",
   falsification: ["F1: Demonstrate extraction of commercial polymetallic nodule mineral content without physical removal of the nodule substrate from the seafloor (falsifies A2).","F2: Demonstrate nodule regeneration in the CCZ on timescales shorter than 10^4 years via radiometric dating showing systematic error in current ¹⁰Be/⁹Be measurements (falsifies A3).","F3: Demonstrate that LFP and sodium-ion battery chemistries at >85% global deployment combined with closed-loop recycling eliminate commercial demand for CCZ minerals (dissolves A1, removing theorem scope)."],
   key_sources: ["Sumaila et al., Cost-benefit analysis of DSM (2025)","Muñoz-Royo et al., Patania II plume empirics (2022)","Niner et al., No Net Loss impossibility (2018)","FAS, Status of World Nuclear Forces — context for pre-extraction classification (2026)"]
@@ -325,7 +325,7 @@ export default function DSM7aAbyssalRecoveryFloorDashboard() {
                   <th style={{padding:'8px 12px',textAlign:'left',color:C.gold}}>CAPM ANALOGUE</th>
                 </tr></thead>
                 <tbody>
-                  {[['β_W (System Beta)','β (Market Beta)'],['PSF (Private-Systemic Frontier)','SML (Security Market Line)'],[<>μ* (Shadow Price)</>,<>r<sub>f</sub> (Risk-Free Rate)</>],['Πˢᵃ (System-Adjusted Payoff)','α (Jensen\'s Alpha)'],['W (System Welfare)','No equivalent — structurally invisible'],[<>𝒮<sub>W</sub> (Welfare Efficiency)</>,<>Sharpe Ratio</>]].map(([s,c],i) => (
+                  {[[<>β<sub>W</sub> (System Beta)</>,<>β (Market Beta)</>],['PSF (Private-Systemic Frontier)','SML (Security Market Line)'],[<>μ* (Shadow Price)</>,<>r<sub>f</sub> (Risk-Free Rate)</>],['Πˢᵃ (System-Adjusted Payoff)','α (Jensen\'s Alpha)'],['W (System Welfare)','No equivalent — structurally invisible'],[<>𝒮<sub>W</sub> (Welfare Efficiency)</>,<>Sharpe Ratio</>]].map(([s,c],i) => (
                     <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`}}>
                       <td style={{padding:'8px 12px',color:C.text}}>{s}</td>
                       <td style={{padding:'8px 12px',color:C.muted,fontFamily:C.serif}}>{c}</td>
@@ -482,7 +482,7 @@ export default function DSM7aAbyssalRecoveryFloorDashboard() {
       </div>
 
       
-      {/* 𝒮_W WELFARE EFFICIENCY RATIO */}
+      {/* 𝒮W WELFARE EFFICIENCY RATIO */}
       <div style={{padding:"24px",background:C.panel,border:"2px solid #D9770640",borderRadius:4,margin:"24px 0"}}>
         <div style={{fontFamily:C.mono,fontSize:12,color:"#D97706",letterSpacing:2,marginBottom:16}}>WELFARE EFFICIENCY RATIO</div>
         <div style={{display:"flex",alignItems:"baseline",gap:12,marginBottom:12}}>
