@@ -1,0 +1,138 @@
+{
+  "key": "sapm-dsm-abyssal-recovery-floor",
+  "meta_fill": {
+    "pi": "$4.8B",
+    "psa": "-$27.8B",
+    "mu": "0.213",
+    "kappa": "2.04"
+  },
+  "psf": {
+    "pi_c": 0.5,
+    "pi_p": 4.8,
+    "w_c": 32.6,
+    "kappa": 2.04
+  },
+  "monte_carlo": {
+    "mean": 6.6,
+    "ci_lo": 4.9,
+    "ci_hi": 9.1,
+    "pct_hw": 100.0,
+    "n_draws": 10000,
+    "channels": [
+      {
+        "name": "Benthic habitat destruction",
+        "dist": "triangular",
+        "lo": 6.5,
+        "hi": 11.0,
+        "mode": 8.5
+      },
+      {
+        "name": "Sediment plume damage",
+        "dist": "triangular",
+        "lo": 4.2,
+        "hi": 8.5,
+        "mode": 6.2
+      },
+      {
+        "name": "Midwater ecosystem disruption",
+        "dist": "log-normal",
+        "lo": 3.5,
+        "hi": 8.5,
+        "mode": 5.8
+      },
+      {
+        "name": "Carbon sequestration loss",
+        "dist": "triangular",
+        "lo": 2.5,
+        "hi": 6.0,
+        "mode": 4.1
+      },
+      {
+        "name": "Biodiversity extinction",
+        "dist": "log-normal",
+        "lo": 5.0,
+        "hi": 11.5,
+        "mode": 8.0
+      },
+      {
+        "name": "Governance failure",
+        "dist": "uniform",
+        "lo": 0.5,
+        "hi": 2.5,
+        "mode": 1.5
+      }
+    ]
+  },
+  "thresholds": [
+    {
+      "domain": "ISA Mining Code adoption",
+      "year": 2026,
+      "confidence": "Low",
+      "status": "Still unfinished after Nauru two-year rule trigger; 40-nation moratorium coalition",
+      "crossed": false
+    },
+    {
+      "domain": "TMC NOAA commercial recovery permit",
+      "year": 2027,
+      "confidence": "Medium",
+      "status": "Application submitted Jan 2026; NOAA review underway",
+      "crossed": false
+    },
+    {
+      "domain": "First commercial nodule extraction (1M+ tonnes)",
+      "year": 2028,
+      "confidence": "Low",
+      "status": "TMC targeting 2027-2028; governance and capital uncertainty remain",
+      "crossed": false
+    },
+    {
+      "domain": "LFP/Na-ion >85% new battery deployment",
+      "year": 2035,
+      "confidence": "Low",
+      "status": "LFP ~50% in 2025; Na-ion mass production Feb 2026 (CATL Naxtra)",
+      "crossed": false
+    },
+    {
+      "domain": "Cobalt prices below commercial DSM viability threshold",
+      "year": 2028,
+      "confidence": "Medium",
+      "status": "Cobalt -60% over 3 years; Loke Marine Minerals bankruptcy April 2025",
+      "crossed": false
+    }
+  ],
+  "axioms": {
+    "type": "impossibility",
+    "items": [
+      {
+        "id": "A1",
+        "name": "Resource Necessity",
+        "description": "Critical minerals in polymetallic nodules (Ni, Co, Cu, Mn) serve as inputs to the global energy transition, creating demand pressure that no single actor can eliminate \u2014 though LFP and sodium-ion battery chemistry are dissolving this axiom from the demand side."
+      },
+      {
+        "id": "A2",
+        "name": "Extraction-Disruption Identity",
+        "description": "The polymetallic nodule constitutes the primary hard substrate for benthic organisms in the CCZ abyssal plain; extracting the nodule and destroying the benthic habitat are the same physical act and cannot be separated by any extraction technology."
+      },
+      {
+        "id": "A3",
+        "name": "Abyssal Timescale Asymmetry",
+        "description": "Nodule regeneration rates of 1-20 mm/Myr and benthic ecosystem recovery times >10^3 years exceed any market discount rate, planning horizon, or institutional control period by at least three orders of magnitude."
+      }
+    ]
+  },
+  "methods": {
+    "welfare_function": "W computed across five channels using Sumaila et al. (2025) comprehensive CBA anchored at geometric mean of $5.60-8.70 non-financial losses per $1.00 financial gain, with \u03b2_W = \u221a(5.6 \u00d7 8.7) \u2248 6.8.",
+    "cooperative_baseline": "No commercial nodule extraction; mineral demand met by LFP/sodium-ion battery chemistry substitution and closed-loop recycling, with $0.5B in legitimate ISA-supervised scientific research value.",
+    "key_sources": [
+      "Sumaila et al., Cost-benefit analysis of DSM (2025)",
+      "Mu\u00f1oz-Royo et al., Patania II plume empirics (2022)",
+      "Niner et al., No Net Loss impossibility (2018)",
+      "FAS, Status of World Nuclear Forces \u2014 context for pre-extraction classification (2026)"
+    ],
+    "falsification": [
+      "F1: Demonstrate extraction of commercial polymetallic nodule mineral content without physical removal of the nodule substrate from the seafloor (falsifies A2).",
+      "F2: Demonstrate nodule regeneration in the CCZ on timescales shorter than 10^4 years via radiometric dating showing systematic error in current \u00b9\u2070Be/\u2079Be measurements (falsifies A3).",
+      "F3: Demonstrate that LFP and sodium-ion battery chemistries at >85% global deployment combined with closed-loop recycling eliminate commercial demand for CCZ minerals (dissolves A1, removing theorem scope)."
+    ]
+  }
+}

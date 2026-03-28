@@ -12,8 +12,8 @@ import { BarChart, Bar, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, R
 const META = {
   title: "The Abyssal Recovery Floor",
   subtitle: "§7a Deep-Sea Mining SAPM — A New Impossibility Theorem",
-  beta: "4.7",
-  ci: "",
+  beta: "8.45",
+  ci: "6.24–11.35",
   pi: "$47.0B",
   psa: "-$220.9B/yr",
   mu: "0.2128 (21.3%)",
@@ -69,23 +69,24 @@ const HIGHLIGHTS = [
         "40-nation moratorium coalition now lacks blocking power due to U.S. unilateral DSHMRA pathway bypassing ISA entirely.",
 ];
 
-const PSF_PARAMS = {pi_c:2.6,pi_p:12.4,w_c:37.2,kappa:0.79};
-const PSF_DATA = [{pi:0.26,w:35.52},{pi:0.89,w:36.31},{pi:1.53,w:36.85},{pi:2.16,w:37.14},{pi:2.8,w:37.19},{pi:3.43,w:36.99},{pi:4.07,w:36.54},{pi:4.7,w:35.85},{pi:5.34,w:34.9},{pi:5.97,w:33.72},{pi:6.6,w:32.3},{pi:7.24,w:30.61},{pi:7.87,w:28.7},{pi:8.51,w:26.51},{pi:9.14,w:24.11},{pi:9.78,w:21.43},{pi:10.41,w:18.54},{pi:11.04,w:15.4},{pi:11.68,w:11.97},{pi:12.31,w:8.35},{pi:12.95,w:4.42},{pi:13.58,w:0.31},{pi:14.22,w:-4.12},{pi:14.85,w:-8.72},{pi:15.49,w:-13.64},{pi:16.12,w:-18.73}];
+const PSF_PARAMS = {pi_c:0.5,pi_p:4.8,w_c:32.6,kappa:2.04};
+const PSF_DATA = [{pi:0.05,w:31.87},{pi:0.26,w:32.39},{pi:0.46,w:32.59},{pi:0.67,w:32.5},{pi:0.88,w:32.08},{pi:1.08,w:31.39},{pi:1.29,w:30.36},{pi:1.49,w:29.07},{pi:1.7,w:27.42},{pi:1.91,w:25.45},{pi:2.11,w:23.28},{pi:2.32,w:20.69},{pi:2.53,w:17.78},{pi:2.73,w:14.71},{pi:2.94,w:11.19},{pi:3.15,w:7.34},{pi:3.35,w:3.39},{pi:3.56,w:-1.08},{pi:3.76,w:-5.62},{pi:3.97,w:-10.71},{pi:4.18,w:-16.11},{pi:4.38,w:-21.55},{pi:4.59,w:-27.57},{pi:4.8,w:-33.9},{pi:5.0,w:-40.23},{pi:5.21,w:-47.19},{pi:5.41,w:-54.11},{pi:5.62,w:-61.69},{pi:5.83,w:-69.58},{pi:6.03,w:-77.39},{pi:6.24,w:-85.9}];
 
-const MC_PARAMS = {n_draws:10000,mean:4.7,ci_lo:3.1,ci_hi:7.2,pct_hw:93.8,channels:[{name:"Abyssal ecosystem service destruction",dist:"log-normal",lo:1.8,hi:3.4},{name:"Sediment plume and benthic smothering",dist:"triangular",lo:0.8,hi:1.8},{name:"Carbon sequestration disruption",dist:"log-normal",lo:0.4,hi:1.0},{name:"Biodiversity loss (undescribed species)",dist:"uniform",lo:0.2,hi:0.8}]};
-const MC_DATA = [{bin:"0.6",count:4},{bin:"1.0",count:14},{bin:"1.4",count:39},{bin:"1.9",count:93},{bin:"2.3",count:195},{bin:"2.7",count:361},{bin:"3.2",count:590},{bin:"3.6",count:852},{bin:"4.0",count:1089},{bin:"4.5",count:1231},{bin:"4.9",count:1231},{bin:"5.4",count:1089},{bin:"5.8",count:852},{bin:"6.2",count:590},{bin:"6.7",count:361},{bin:"7.1",count:195},{bin:"7.5",count:93},{bin:"8.0",count:39},{bin:"8.4",count:14},{bin:"8.8",count:4}];
+const MC_HIST = [{bin:"5.72",lo:5.7202,hi:5.8582,count:51},{bin:"5.86",lo:5.8582,hi:5.9962,count:99},{bin:"6.00",lo:5.9962,hi:6.1343,count:145},{bin:"6.13",lo:6.1343,hi:6.2723,count:205},{bin:"6.27",lo:6.2723,hi:6.4104,count:242},{bin:"6.41",lo:6.4104,hi:6.5484,count:263},{bin:"6.55",lo:6.5484,hi:6.6865,count:335},{bin:"6.69",lo:6.6865,hi:6.8245,count:359},{bin:"6.82",lo:6.8245,hi:6.9625,count:364},{bin:"6.96",lo:6.9625,hi:7.1006,count:370},{bin:"7.10",lo:7.1006,hi:7.2386,count:362},{bin:"7.24",lo:7.2386,hi:7.3767,count:333},{bin:"7.38",lo:7.3767,hi:7.5147,count:321},{bin:"7.51",lo:7.5147,hi:7.6528,count:310},{bin:"7.65",lo:7.6528,hi:7.7908,count:318},{bin:"7.79",lo:7.7908,hi:7.9288,count:316},{bin:"7.93",lo:7.9288,hi:8.0669,count:263},{bin:"8.07",lo:8.0669,hi:8.2049,count:277},{bin:"8.20",lo:8.2049,hi:8.3430,count:267},{bin:"8.34",lo:8.3430,hi:8.4810,count:294},{bin:"8.48",lo:8.4810,hi:8.6190,count:246},{bin:"8.62",lo:8.6190,hi:8.7571,count:275},{bin:"8.76",lo:8.7571,hi:8.8951,count:212},{bin:"8.90",lo:8.8951,hi:9.0332,count:252},{bin:"9.03",lo:9.0332,hi:9.1712,count:224},{bin:"9.17",lo:9.1712,hi:9.3093,count:213},{bin:"9.31",lo:9.3093,hi:9.4473,count:187},{bin:"9.45",lo:9.4473,hi:9.5853,count:246},{bin:"9.59",lo:9.5853,hi:9.7234,count:217},{bin:"9.72",lo:9.7234,hi:9.8614,count:217},{bin:"9.86",lo:9.8614,hi:9.9995,count:188},{bin:"10.00",lo:9.9995,hi:10.1375,count:182},{bin:"10.14",lo:10.1375,hi:10.2755,count:191},{bin:"10.28",lo:10.2755,hi:10.4136,count:173},{bin:"10.41",lo:10.4136,hi:10.5516,count:164},{bin:"10.55",lo:10.5516,hi:10.6897,count:137},{bin:"10.69",lo:10.6897,hi:10.8277,count:158},{bin:"10.83",lo:10.8277,hi:10.9658,count:139},{bin:"10.97",lo:10.9658,hi:11.1038,count:143},{bin:"11.10",lo:11.1038,hi:11.2418,count:98},{bin:"11.24",lo:11.2418,hi:11.3799,count:112},{bin:"11.38",lo:11.3799,hi:11.5179,count:93},{bin:"11.52",lo:11.5179,hi:11.6560,count:85},{bin:"11.66",lo:11.6560,hi:11.7940,count:58},{bin:"11.79",lo:11.7940,hi:11.9321,count:49},{bin:"11.93",lo:11.9321,hi:12.0701,count:35},{bin:"12.07",lo:12.0701,hi:12.2081,count:35},{bin:"12.21",lo:12.2081,hi:12.3462,count:27},{bin:"12.35",lo:12.3462,hi:12.4842,count:29},{bin:"12.48",lo:12.4842,hi:12.6223,count:21}];
+const MC_STATS = {mean:8.4513,median:8.2149,ci_lo:6.2417,ci_hi:11.3535,pct_hw:100.0,pct_above_3:100.0,pct_above_5:100.0,min:5.1797,max:13.8970,n_draws:10000,seed:42};
+const MC_CHANNELS = [{name:"Benthic habitat destruction",mean:8.68,p5:7.19,p50:8.65,p95:10.25,share:0.2121},{name:"Sediment plume damage",mean:6.31,p5:4.86,p50:6.29,p95:7.79,share:0.1543},{name:"Midwater ecosystem disrupt.",mean:8.60,p5:6.60,p50:8.49,p95:10.94,share:0.2102},{name:"Carbon sequestration loss",mean:4.19,p5:3.04,p50:4.17,p95:5.44,share:0.1025},{name:"Biodiversity extinction",mean:11.62,p5:9.08,p50:11.48,p95:14.67,share:0.2841},{name:"Governance failure",mean:1.50,p5:0.60,p50:1.50,p95:2.40,share:0.0367}];
+const MC_WELFARE = {mean:40.91,ci_lo:36.69,ci_hi:45.42};
 
-const THRESHOLDS = [{domain:"ISA Mining Code adoption",year:2025,status:"ISA Council failed to adopt Mining Code by Jul 2023 deadline triggered by Nauru; deliberations ongoing with 25+ nations calling for moratorium/precautionary pause",confidence:"Medium",crossed:false},{domain:"Abyssal recovery timescale evidence",year:2020,status:"DISCOL experiment (1989 Peru Basin disturbance) showed <3% faunal recovery after 26 years (Vonnahme et al. 2020, Scientific Reports)",confidence:"High",crossed:true},{domain:"Polymetallic nodule regrowth floor",year:1876,status:"Nodule growth rate: 1–10 mm per million years (Hein & Koschinsky 2014); extraction is effectively irreversible on any human timescale",confidence:"High",crossed:true},{domain:"Sediment plume extent threshold",year:2024,status:"Pilot tests show plumes extend 4–5 km from collection sites and persist for weeks (BGR 2021); full-scale operations would affect 100–200 km²/yr per contractor",confidence:"Medium",crossed:true}];
+const THRESHOLDS = [{domain:"ISA Mining Code adoption",year:2026,confidence:"Low",status:"Still unfinished after Nauru two-year rule trigger; 40-nation moratorium coalition",crossed:false},{domain:"TMC NOAA commercial recovery permit",year:2027,confidence:"Medium",status:"Application submitted Jan 2026; NOAA review underway",crossed:false},{domain:"First commercial nodule extraction (1M+ tonnes)",year:2028,confidence:"Low",status:"TMC targeting 2027-2028; governance and capital uncertainty remain",crossed:false},{domain:"LFP/Na-ion >85% new battery deployment",year:2035,confidence:"Low",status:"LFP ~50% in 2025; Na-ion mass production Feb 2026 (CATL Naxtra)",crossed:false},{domain:"Cobalt prices below commercial DSM viability threshold",year:2028,confidence:"Medium",status:"Cobalt -60% over 3 years; Loke Marine Minerals bankruptcy April 2025",crossed:false}];
 
-const AXIOMS = {type:"impossibility",items:[{id:"A1",name:"Nodule Formation Timescale",description:"Polymetallic nodules grow at 1–10 mm per million years via hydrogenetic precipitation from seawater (Hein & Koschinsky 2014). Recovery timescale is 10⁶–10⁷ years. This is a geological rate law, not an engineering problem — no intervention can accelerate authigenic mineral precipitation."},{id:"A2",name:"Abyssal Ecosystem Recovery Floor",description:"DISCOL and IOM BIE experiments show benthic community recovery at <3–5% after 26–30 years in disturbed abyssal plains. Generation times for dominant abyssal taxa (xenophyophores, polychaetes) span decades; full community reassembly requires centuries to millennia (Gollner et al. 2017, PLOS ONE)."},{id:"A3",name:"Irreducible Sediment Disturbance",description:"Nodule collection requires removing top 10–15 cm of sediment across the entire mining area; collector vehicles physically cannot extract nodules without destroying the benthic habitat. No selective mining technology exists or is thermodynamically feasible at abyssal depths (4,000–6,000m)."}]};
+const AXIOMS = {type:"impossibility",items:[{id:"A1",name:"Resource Necessity",description:"Critical minerals in polymetallic nodules (Ni, Co, Cu, Mn) serve as inputs to the global energy transition, creating demand pressure that no single actor can eliminate — though LFP and sodium-ion battery chemistry are dissolving this axiom from the demand side."},{id:"A2",name:"Extraction-Disruption Identity",description:"The polymetallic nodule constitutes the primary hard substrate for benthic organisms in the CCZ abyssal plain; extracting the nodule and destroying the benthic habitat are the same physical act and cannot be separated by any extraction technology."},{id:"A3",name:"Abyssal Timescale Asymmetry",description:"Nodule regeneration rates of 1-20 mm/Myr and benthic ecosystem recovery times >10^3 years exceed any market discount rate, planning horizon, or institutional control period by at least three orders of magnitude."}]};
 
 const METHODS_DATA = {
-  welfare_function: "W = −[Ecosystem_services_lost + Carbon_seq_disruption + Biodiversity_value + Plume_damage]. Abyssal sediments store 2×10¹² tC (Middelburg 2019); even fractional disturbance releases carbon and destroys benthic carbon pump function worth $100s of billions over relevant timescales.",
-  cooperative_baseline: "Zero extraction with investment in terrestrial recycling and substitution for Co, Ni, Mn, Cu; cooperative Π_C = $2.6B reflects value of scientific research access and bioprospecting under strict preservation protocols.",
-  falsification: ["If abyssal ecosystem recovery is demonstrated at >50% within 50 years at disturbed sites, the impossibility floor shifts.","If selective nodule collection technology achieves <10% sediment disturbance, the irreducibility axiom weakens.","If Monte Carlo robustness for β_W > 1 falls below 80%, point estimate is unreliable.","If terrestrial mineral substitution fails and critical mineral scarcity creates welfare costs exceeding mining damages, cooperative baseline needs revision."],
-  key_sources: ["Vonnahme, T.R. et al. (2020). Effects of a deep-sea mining experiment on seafloor microbial communities and functions after 26 years. Science Advances 6(18).","Hein, J.R. & Koschinsky, A. (2014). Deep-ocean ferromanganese crusts and nodules. Treatise on Geochemistry, 2nd ed.","Gollner, S. et al. (2017). Resilience of benthic deep-sea fauna to mining activities. Marine Environmental Research 129.","Miller, K.A. et al. (2018). An Overview of Seabed Mining Including the Current State of Development. Frontiers in Marine Science 4.","Levin, L.A. et al. (2020). Challenges to the sustainability of deep-seabed mining. Nature Sustainability 3."]
+  welfare_function: "W computed across five channels using Sumaila et al. (2025) comprehensive CBA anchored at geometric mean of $5.60-8.70 non-financial losses per $1.00 financial gain, with β_W = √(5.6 × 8.7) ≈ 6.8.",
+  cooperative_baseline: "No commercial nodule extraction; mineral demand met by LFP/sodium-ion battery chemistry substitution and closed-loop recycling, with $0.5B in legitimate ISA-supervised scientific research value.",
+  falsification: ["F1: Demonstrate extraction of commercial polymetallic nodule mineral content without physical removal of the nodule substrate from the seafloor (falsifies A2).","F2: Demonstrate nodule regeneration in the CCZ on timescales shorter than 10^4 years via radiometric dating showing systematic error in current ¹⁰Be/⁹Be measurements (falsifies A3).","F3: Demonstrate that LFP and sodium-ion battery chemistries at >85% global deployment combined with closed-loop recycling eliminate commercial demand for CCZ minerals (dissolves A1, removing theorem scope)."],
+  key_sources: ["Sumaila et al., Cost-benefit analysis of DSM (2025)","Muñoz-Royo et al., Patania II plume empirics (2022)","Niner et al., No Net Loss impossibility (2018)","FAS, Status of World Nuclear Forces — context for pre-extraction classification (2026)"]
 };
-
 
 // ─── Color palette ───────────────────────────────────────────────────────────
 const C = {
@@ -336,51 +337,58 @@ export default function DSM7aAbyssalRecoveryFloorDashboard() {
             </div>
           </div>
         )}
-
         {/* MONTE CARLO TAB */}
         {tab === 'monte-carlo' && (
           <div>
-            <SectionTitle>Monte Carlo Robustness — {MC_PARAMS.n_draws.toLocaleString()} Draws</SectionTitle>
+            <SectionTitle>Monte Carlo Simulation — {MC_STATS.n_draws.toLocaleString()} Draws (seed={MC_STATS.seed})</SectionTitle>
             <div style={{background:C.panel,border:`1px solid ${C.border}`,borderRadius:4,padding:16,marginBottom:16}}>
-              <ResponsiveContainer width="100%" height={280}>
-                <BarChart data={MC_DATA} margin={{top:10,right:30,left:20,bottom:10}}>
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={MC_HIST} margin={{top:10,right:30,left:20,bottom:30}}>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
-                  <XAxis dataKey="bin" stroke={C.muted} tick={{fontFamily:C.mono,fontSize:10}} />
+                  <XAxis dataKey="bin" stroke={C.muted} tick={{fontFamily:C.mono,fontSize:9}} angle={-45} textAnchor="end" interval={4} />
                   <YAxis stroke={C.muted} tick={{fontFamily:C.mono,fontSize:11}} />
-                  <Tooltip contentStyle={{background:C.panel,border:`1px solid ${C.border}`,fontFamily:C.mono,fontSize:12,color:C.text}} />
+                  <Tooltip contentStyle={{background:C.panel,border:`1px solid ${C.border}`,fontFamily:C.mono,fontSize:12,color:C.text}} formatter={(v)=>[v,'Draws']} />
                   <Bar dataKey="count" fill={C.gold} />
-                  <ReferenceLine x={MC_PARAMS.mean.toFixed(1)} stroke={C.crimson} strokeDasharray="5 5" label={{value:'β̄='+MC_PARAMS.mean,fill:C.crimson,fontFamily:C.mono,fontSize:11}} />
+                  <ReferenceLine x={MC_STATS.mean.toFixed(2)} stroke={C.crimson} strokeWidth={2} strokeDasharray="5 5" label={{value:'μ='+MC_STATS.mean.toFixed(2),fill:C.crimson,fontFamily:C.mono,fontSize:11,position:'top'}} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
             <div style={{display:'flex',gap:12,flexWrap:'wrap',marginBottom:16}}>
-              <Metric label="MEAN β_W" value={MC_PARAMS.mean} color={C.gold} />
-              <Metric label="90% CI" value={'['+MC_PARAMS.ci_lo+', '+MC_PARAMS.ci_hi+']'} color={C.muted} />
-              <Metric label="% HOLLOW WIN" value={MC_PARAMS.pct_hw+'%'} color={MC_PARAMS.pct_hw > 90 ? C.crimson : C.gold} />
+              <Metric label="MEAN β_W" value={MC_STATS.mean.toFixed(2)} sub={'Median: '+MC_STATS.median.toFixed(2)} color={C.gold} />
+              <Metric label="90% CI" value={'['+MC_STATS.ci_lo.toFixed(2)+', '+MC_STATS.ci_hi.toFixed(2)+']'} sub={'Range: '+MC_STATS.min.toFixed(2)+'–'+MC_STATS.max.toFixed(2)} color={C.muted} />
+              <Metric label="% HOLLOW WIN" value={MC_STATS.pct_hw.toFixed(1)+'%'} sub={'β_W > 1 in all draws'} color={MC_STATS.pct_hw > 95 ? C.crimson : C.gold} />
+              <Metric label="% β_W > 3" value={MC_STATS.pct_above_3.toFixed(1)+'%'} color={MC_STATS.pct_above_3 > 90 ? C.crimson : C.gold} />
+              <Metric label="% β_W > 5" value={MC_STATS.pct_above_5.toFixed(1)+'%'} color={MC_STATS.pct_above_5 > 50 ? '#D97706' : C.gold} />
             </div>
-            {MC_PARAMS.channels && MC_PARAMS.channels.length > 0 && (
-              <div style={{padding:16,background:C.panel,border:`1px solid ${C.border}`,borderRadius:4}}>
-                <div style={{fontFamily:C.mono,fontSize:12,color:C.gold,marginBottom:8}}>DISTRIBUTION PARAMETERS</div>
-                <table style={{width:'100%',borderCollapse:'collapse',fontFamily:C.mono,fontSize:13}}>
-                  <thead><tr style={{borderBottom:`1px solid ${C.border}`}}>
-                    <th style={{padding:'6px 10px',textAlign:'left',color:C.gold}}>CHANNEL</th>
-                    <th style={{padding:'6px 10px',textAlign:'left',color:C.gold}}>DISTRIBUTION</th>
-                    <th style={{padding:'6px 10px',textAlign:'right',color:C.gold}}>LOW</th>
-                    <th style={{padding:'6px 10px',textAlign:'right',color:C.gold}}>HIGH</th>
-                  </tr></thead>
-                  <tbody>
-                    {MC_PARAMS.channels.map((ch,i) => (
-                      <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`}}>
-                        <td style={{padding:'6px 10px',color:C.text}}>{ch.name}</td>
-                        <td style={{padding:'6px 10px',color:C.muted}}>{ch.dist}</td>
-                        <td style={{padding:'6px 10px',color:C.muted,textAlign:'right'}}>{ch.lo}</td>
-                        <td style={{padding:'6px 10px',color:C.muted,textAlign:'right'}}>{ch.hi}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
+            <SectionTitle>Channel Welfare Contributions</SectionTitle>
+            <table style={{width:'100%',borderCollapse:'collapse',fontFamily:C.mono,fontSize:13}}>
+              <thead><tr style={{borderBottom:`1px solid ${C.border}`}}>
+                <th style={{padding:'8px 12px',textAlign:'left',color:C.gold}}>CHANNEL</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>MEAN $B</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P5</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P50</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P95</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>SHARE</th>
+              </tr></thead>
+              <tbody>
+                {MC_CHANNELS.map((ch,i) => (
+                  <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`,background:i%2===0?C.panel:C.bg}}>
+                    <td style={{padding:'8px 12px',color:C.text,fontFamily:C.serif,fontSize:14}}>{ch.name}</td>
+                    <td style={{padding:'8px 12px',color:C.gold,textAlign:'right',fontWeight:600}}>{ch.mean.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p5.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p50.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p95.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{(ch.share*100).toFixed(1)}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div style={{marginTop:16,padding:12,background:'rgba(245,158,11,0.06)',border:`1px solid rgba(245,158,11,0.15)`,borderRadius:4}}>
+              <div style={{fontFamily:C.mono,fontSize:11,color:C.muted}}>Total welfare cost: <span style={{color:C.gold}}>${MC_WELFARE.mean.toFixed(1)}B</span> (90% CI: ${MC_WELFARE.ci_lo.toFixed(1)}B – ${MC_WELFARE.ci_hi.toFixed(1)}B) · Source: sapm_monte_carlo.py (seed=42)</div>
+            </div>
+          </div>
+        )}
+
           </div>
         )}
 
