@@ -389,10 +389,6 @@ export default function DSM7aAbyssalRecoveryFloorDashboard() {
           </div>
         )}
 
-
-          </div>
-        )}
-
         {/* THRESHOLDS TAB */}
         {tab === 'thresholds' && (
           <div>
